@@ -13,6 +13,12 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      reaolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`oswald\:300,400,500,700`],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
