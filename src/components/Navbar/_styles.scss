@@ -1,0 +1,68 @@
+nav {
+  display: grid;
+  grid-template-rows: minmax(min-content, 100px) min-content;
+  min-height: 10vh;
+  padding: 20px 0;
+
+  & .content {
+    background-color: $text-light;
+    display: grid;
+    grid-template-columns: 10% repeat(3, auto) 10%;
+    align-items: center;
+    align-content: space-evenly;
+
+    & .logos {
+      grid-column: 2/3;
+      align-items: center;
+      display: flex;
+
+      & .logo,
+      .skull {
+        width: auto;
+        height: 80px;
+
+        @include md {
+          height: 110px;
+          width: auto;
+        }
+      }
+
+      & .nav-name {
+        font-size: 2rem;
+        font-weight: $regular;
+
+        @include sm {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    & .links {
+      display: none;
+      font-size: 1rem;
+      font-weight: $regular;
+
+      @include md {
+        display: grid;
+        grid-gap: 15px;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(min-content, 100px);
+        place-items: center;
+        grid-column: 4/5;
+      }
+    }
+
+    & .menu {
+      justify-self: end;
+      grid-column: 4/5;
+
+      @include md {
+        display: none;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,11 +1,12 @@
 import React from "react"
 
 import Layout from "../components/layout"
+import Navbar from "../components/Navbar"
 
-const IndexPage = () => (
+const Home = () => (
   <Layout>
-    <div></div>
+    <Navbar />
   </Layout>
 )
 
-export default IndexPage
+export default Home
