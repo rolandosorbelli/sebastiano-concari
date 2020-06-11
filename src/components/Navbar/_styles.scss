@@ -7,7 +7,8 @@ nav {
   & .content {
     background-color: $text-light;
     display: grid;
-    grid-template-columns: 10% repeat(3, auto) 10%;
+    grid-template-columns: 10% repeat(2, auto) 10%;
+    column-gap: 10px;
     align-items: center;
     align-content: space-evenly;
 
@@ -30,6 +31,8 @@ nav {
       & .nav-name {
         font-size: 2rem;
         font-weight: $regular;
+        letter-spacing: -1px;
+        padding: 0 10px;
 
         @include sm {
           font-size: 3rem;
@@ -48,13 +51,13 @@ nav {
         grid-auto-flow: column;
         grid-auto-columns: minmax(min-content, 100px);
         place-items: center;
-        grid-column: 4/5;
+        grid-column: 3/4;
       }
     }
 
     & .menu {
       justify-self: end;
-      grid-column: 4/5;
+      grid-column: 3/4;
 
       @include md {
         display: none;
