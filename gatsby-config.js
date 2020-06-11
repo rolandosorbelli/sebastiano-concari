@@ -14,11 +14,12 @@ module.exports = {
       },
     },
     {
-      reaolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`oswald\:300,400,500,700`],
       },
     },
+    `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
