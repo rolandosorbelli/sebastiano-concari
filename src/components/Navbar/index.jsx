@@ -29,17 +29,21 @@ const Navbar = () => {
         </div>
         <div className="links">
           <a
-            href="/tattoos/"
+            href="/tattoos"
             className={
-              window.location.pathname === "/tattoos/" ? "links-active" : ""
+              window.location.pathname.includes("tattoos")
+                ? "links-active"
+                : undefined
             }
           >
             Tattoos
           </a>
           <a
-            href="/art/"
+            href="/art"
             className={
-              window.location.pathname === "/art/" ? "links-active" : ""
+              window.location.pathname.includes("/art")
+                ? "links-active"
+                : undefined
             }
           >
             Art
@@ -47,7 +51,9 @@ const Navbar = () => {
           <a
             href="/shop/"
             className={
-              window.location.pathname === "/shop/" ? "links-active" : ""
+              window.location.pathname.includes("/shop")
+                ? "links-active"
+                : undefined
             }
           >
             Shop
@@ -67,7 +73,9 @@ const Navbar = () => {
           </div>
           <a
             href="/"
-            className={window.location.pathname === "/" ? "links-active" : ""}
+            className={
+              window.location.pathname === "/" ? "links-active" : undefined
+            }
           >
             <span className="circle">
               <img src={home} alt="" />
@@ -75,9 +83,11 @@ const Navbar = () => {
             <span>Home</span>
           </a>
           <a
-            href="/tattoos/"
+            href="/tattoos"
             className={
-              window.location.pathname === "/tattoos/" ? "links-active" : ""
+              window.location.pathname.includes("tattoos")
+                ? "links-active"
+                : undefined
             }
           >
             <span className="circle">
@@ -88,7 +98,9 @@ const Navbar = () => {
           <a
             href="/art/"
             className={
-              window.location.pathname === "/art/" ? "links-active" : ""
+              window.location.pathname.includes("/art")
+                ? "links-active"
+                : undefined
             }
           >
             <span className="circle">
@@ -99,7 +111,9 @@ const Navbar = () => {
           <a
             href="/shop/"
             className={
-              window.location.pathname === "/shop/" ? "links-active" : ""
+              window.location.pathname.includes("/shop")
+                ? "links-active"
+                : undefined
             }
           >
             <span className="circle">
