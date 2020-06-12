@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4787.673" height="4493.35" viewBox="0 0 4787.673 4493.35">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke: #fff;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2, .cls-4 {
+        stroke-width: 150px;
+      }
+
+      .cls-3, .cls-4 {
+        stroke-linecap: round;
+      }
+
+      .cls-3 {
+        stroke-width: 200px;
+      }
+    </style>
+  </defs>
+  <g id="shop_icon_1_" data-name="shop icon (1)" transform="translate(-359.728 -769.7)">
+    <g id="Group_13" data-name="Group 13">
+      <ellipse id="Ellipse_5" data-name="Ellipse 5" class="cls-1" cx="461.97" cy="465.78" rx="461.97" ry="465.78" transform="translate(1583.42 4331.49)"/>
+      <ellipse id="Ellipse_6" data-name="Ellipse 6" class="cls-1" cx="461.97" cy="465.78" rx="461.97" ry="465.78" transform="translate(3371.11 4331.49)"/>
+      <ellipse id="Ellipse_7" data-name="Ellipse 7" class="cls-2" cx="1658.81" cy="195.47" rx="1658.81" ry="195.47" transform="translate(1280.43 3917.83)"/>
+      <path id="Path_399" data-name="Path 399" class="cls-3" d="M4295.06,3837.32H1583.41l-302.98-2449.2H5047.4Z"/>
+      <path id="Path_400" data-name="Path 400" class="cls-3" d="M1583.41,3837.32,1216.3,869.7,461.19,880.83"/>
+      <line id="Line_16" data-name="Line 16" class="cls-4" x1="224.22" y1="2449.2" transform="translate(2395.25 1388.12)"/>
+      <line id="Line_17" data-name="Line 17" class="cls-4" y1="2449.2" x2="308.06" transform="translate(3525.02 1388.12)"/>
+      <line id="Line_18" data-name="Line 18" class="cls-4" x2="3244.85" transform="translate(1426.38 2567.96)"/>
+    </g>
+  </g>
+</svg>
