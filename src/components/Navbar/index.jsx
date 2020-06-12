@@ -29,25 +29,25 @@ const Navbar = () => {
         </div>
         <div className="links">
           <a
-            href="/tattoos"
+            href="/tattoos/"
             className={
-              window.location.pathname === "/tattoos" ? "links-active" : ""
+              window.location.pathname === "/tattoos/" ? "links-active" : ""
             }
           >
             Tattoos
           </a>
           <a
-            href="/art"
+            href="/art/"
             className={
-              window.location.pathname === "/art" ? "links-active" : ""
+              window.location.pathname === "/art/" ? "links-active" : ""
             }
           >
             Art
           </a>
           <a
-            href="/shop"
+            href="/shop/"
             className={
-              window.location.pathname === "/shop" ? "links-active" : ""
+              window.location.pathname === "/shop/" ? "links-active" : ""
             }
           >
             Shop
@@ -75,9 +75,9 @@ const Navbar = () => {
             <span>Home</span>
           </a>
           <a
-            href="/tattoos"
+            href="/tattoos/"
             className={
-              window.location.pathname === "/tattoos" ? "links-active" : ""
+              window.location.pathname === "/tattoos/" ? "links-active" : ""
             }
           >
             <span className="circle">
@@ -86,9 +86,9 @@ const Navbar = () => {
             <span>Tattoos</span>
           </a>
           <a
-            href="/art"
+            href="/art/"
             className={
-              window.location.pathname === "/art" ? "links-active" : ""
+              window.location.pathname === "/art/" ? "links-active" : ""
             }
           >
             <span className="circle">
@@ -97,9 +97,9 @@ const Navbar = () => {
             <span>Art</span>
           </a>
           <a
-            href="/shop"
+            href="/shop/"
             className={
-              window.location.pathname === "/shop" ? "links-active" : ""
+              window.location.pathname === "/shop/" ? "links-active" : ""
             }
           >
             <span className="circle">
