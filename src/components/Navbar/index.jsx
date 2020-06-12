@@ -17,6 +17,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
   const openMenu = () => setOpen(true)
   const closeMenu = () => setOpen(false)
+  console.log(window.location.pathname, "PATHNAME")
 
   return (
     <nav>
@@ -30,7 +31,7 @@ const Navbar = () => {
           <a
             href="/tattoos"
             className={
-              window.location.href.indexOf("tattoos") > 0 ? "links-active" : ""
+              window.location.pathname === "/tattoos" ? "links-active" : ""
             }
           >
             Tattoos
@@ -38,7 +39,7 @@ const Navbar = () => {
           <a
             href="/art"
             className={
-              window.location.href.indexOf("art") > 0 ? "links-active" : ""
+              window.location.pathname === "/art" ? "links-active" : ""
             }
           >
             Art
@@ -46,7 +47,7 @@ const Navbar = () => {
           <a
             href="/shop"
             className={
-              window.location.href.indexOf("shop") > 0 ? "links-active" : ""
+              window.location.pathname === "/shop" ? "links-active" : ""
             }
           >
             Shop
