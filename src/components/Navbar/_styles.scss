@@ -55,6 +55,17 @@ nav {
         place-items: center;
         grid-column: 3/4;
       }
+
+      &-active {
+        border-left: 10px solid $secondary;
+        padding: 0 20px !important;
+
+        @include md {
+          border-left: none;
+          padding: 0 !important;
+          color: $secondary;
+        }
+      }
     }
 
     & .menu {
@@ -72,14 +83,18 @@ nav {
   }
 
   & .dropdown {
-    display: block;
-    background-color: $primary;
-    color: $text-light;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 75%;
+    display: none;
+
+    &-open {
+      display: block;
+      background-color: $primary;
+      color: $text-light;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 75%;
+    }
 
     @include md {
       display: none;
@@ -106,6 +121,10 @@ nav {
           width: 60%;
           height: auto;
         }
+      }
+
+      & .close svg {
+        cursor: pointer;
       }
 
       & > * {

@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
+import classnames from "classnames"
+import { window } from "browser-monads"
 
 import logo from "../../images/logo.svg"
 import skull from "../../images/skull.svg"
@@ -12,14 +14,10 @@ import tattoos from "../../images/tattoos.svg"
 import { Menu, Close } from "@material-ui/icons"
 
 const Navbar = () => {
-  const navArray = {
-    Home: home,
-    Tattoos: tattoos,
-    Art: art,
-    Shop: shop,
-    "Contact me": contact,
-    Instagram: instagram,
-  }
+  const [open, setOpen] = useState(false)
+  const openMenu = () => setOpen(true)
+  const closeMenu = () => setOpen(false)
+
   return (
     <nav>
       <div className="content">
@@ -29,26 +27,97 @@ const Navbar = () => {
           <h1 className="nav-name">Sebastiano Concari</h1>
         </div>
         <div className="links">
-          <a href="/">Tattoos</a>
-          <a href="/">Art</a>
-          <a href="/">Shop</a>
+          <a
+            href="/tattoos"
+            className={
+              window.location.href.indexOf("tattoos") > 0 ? "links-active" : ""
+            }
+          >
+            Tattoos
+          </a>
+          <a
+            href="/art"
+            className={
+              window.location.href.indexOf("art") > 0 ? "links-active" : ""
+            }
+          >
+            Art
+          </a>
+          <a
+            href="/shop"
+            className={
+              window.location.href.indexOf("shop") > 0 ? "links-active" : ""
+            }
+          >
+            Shop
+          </a>
           <a href="mailto:rolando.sorbelli@gmail.com">Contact me</a>
         </div>
-        <Menu className="menu" />
+        <Menu className="menu" onClick={openMenu} />
       </div>
-      <div className="dropdown">
+      <div
+        className={classnames("dropdown", {
+          "dropdown-open": open,
+        })}
+      >
         <div className="content">
           <div className="close">
-            <Close />
+            <Close onClick={closeMenu} />
           </div>
-          {Object.entries(navArray).map(([key, value], i) => (
-            <a href="/" key={i}>
-              <span className="circle">
-                <img src={value} alt="" />
-              </span>
-              <span>{key}</span>
-            </a>
-          ))}
+          <a
+            href="/"
+            className={window.location.pathname === "/" ? "links-active" : ""}
+          >
+            <span className="circle">
+              <img src={home} alt="" />
+            </span>
+            <span>Home</span>
+          </a>
+          <a
+            href="/tattoos"
+            className={
+              window.location.pathname === "/tattoos" ? "links-active" : ""
+            }
+          >
+            <span className="circle">
+              <img src={tattoos} alt="" />
+            </span>
+            <span>Tattoos</span>
+          </a>
+          <a
+            href="/art"
+            className={
+              window.location.pathname === "/art" ? "links-active" : ""
+            }
+          >
+            <span className="circle">
+              <img src={art} alt="" />
+            </span>
+            <span>Art</span>
+          </a>
+          <a
+            href="/shop"
+            className={
+              window.location.pathname === "/shop" ? "links-active" : ""
+            }
+          >
+            <span className="circle">
+              <img src={shop} alt="" />
+            </span>
+            <span>Shop</span>
+          </a>
+          <a href="/mailto:rolando.sorbelli@gmail.com">
+            <span className="circle">
+              <img src={contact} alt="" />
+            </span>
+            <span>Contact me</span>
+          </a>
+          <a href="/">
+            <span className="circle">
+              <img src={instagram} alt="" />
+            </span>
+            <span>Instagram</span>
+          </a>
         </div>
       </div>
     </nav>
