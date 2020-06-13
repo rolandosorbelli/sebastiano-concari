@@ -27,7 +27,7 @@ const Navbar = () => {
           <h1 className="nav-name">Sebastiano Concari</h1>
         </div>
         <div className="links">
-          {console.log(window.location.pathname.includes("tattoos"), window)}
+          {console.log(window.location, window)}
           <a
             href="/tattoos"
             className={classnames({
@@ -38,11 +38,9 @@ const Navbar = () => {
           </a>
           <a
             href="/art"
-            className={
-              window.location.pathname.includes("/art")
-                ? "links-active"
-                : "links-inactive"
-            }
+            className={classnames({
+              active: window.location.pathname.includes("art"),
+            })}
           >
             Art
           </a>
