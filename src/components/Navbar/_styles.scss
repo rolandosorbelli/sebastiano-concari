@@ -55,16 +55,16 @@ nav {
         place-items: center;
         grid-column: 3/4;
       }
+    }
 
-      & .link-active {
-        border-left: 10px solid $secondary;
-        padding: 0 20px !important;
+    .link-active {
+      border-left: 10px solid $secondary;
+      padding: 0 20px !important;
 
-        @include md {
-          border-left: none;
-          padding: 0 !important;
-          color: $secondary;
-        }
+      @include md {
+        border-left: none;
+        padding: 0 !important;
+        color: $secondary;
       }
     }
 

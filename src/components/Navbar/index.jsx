@@ -20,16 +20,19 @@ const Navbar = () => {
   const [tattoosIndex, setTattooIndex] = useState(false)
   const [artIndex, setArtIndex] = useState(false)
   const [shopIndex, setShopIndex] = useState(false)
+  const [homeIndex, setHomeIndex] = useState(false)
 
   useEffect(() => {
     const pageUrl = window.location.href
+    console.log(pageUrl.indexOf(""), "HOME!")
+
     pageUrl.indexOf("tattoos") > 0
       ? setTattooIndex(true)
       : pageUrl.indexOf("art") > 0
       ? setArtIndex(true)
       : pageUrl.indexOf("shop") > 0
       ? setShopIndex(true)
-      : setTattooIndex(false)
+      : setHomeIndex(true)
   }, [])
 
   return (
@@ -43,21 +46,14 @@ const Navbar = () => {
         <div className="links">
           <a
             href="/tattoos"
-            className={classnames({
-              "link-active": tattoosIndex,
-            })}
+            className={tattoosIndex ? "link-active" : undefined}
           >
             Tattoos
           </a>
           <a href="/art" className={artIndex ? "link-active" : undefined}>
             Art
           </a>
-          <a
-            href="/shop"
-            className={classnames({
-              "link-active": shopIndex,
-            })}
-          >
+          <a href="/shop" className={shopIndex ? "link-active" : undefined}>
             Shop
           </a>
           <a href="mailto:rolando.sorbelli@gmail.com">Contact me</a>
@@ -73,14 +69,7 @@ const Navbar = () => {
           <div className="close">
             <Close onClick={closeMenu} />
           </div>
-          <a
-            href="/"
-            className={
-              window.location.pathname === "/"
-                ? "links-active"
-                : "links-inactive"
-            }
-          >
+          <a href="/" className={homeIndex ? "link-active" : undefined}>
             <span className="circle">
               <img src={home} alt="" />
             </span>
@@ -88,38 +77,20 @@ const Navbar = () => {
           </a>
           <a
             href="/tattoos"
-            className={
-              window.location.pathname.includes("tattoos")
-                ? "links-active"
-                : "links-inactive"
-            }
+            className={tattoosIndex ? "link-active" : undefined}
           >
             <span className="circle">
               <img src={tattoos} alt="" />
             </span>
             <span>Tattoos</span>
           </a>
-          <a
-            href="/art/"
-            className={
-              window.location.pathname.includes("/art")
-                ? "links-active"
-                : "links-inactive"
-            }
-          >
+          <a href="/art" className={artIndex ? "link-active" : undefined}>
             <span className="circle">
               <img src={art} alt="" />
             </span>
             <span>Art</span>
           </a>
-          <a
-            href="/shop/"
-            className={
-              window.location.pathname.includes("/shop")
-                ? "links-active"
-                : "links-inactive"
-            }
-          >
+          <a href="/shop" className={shopIndex ? "link-active" : undefined}>
             <span className="circle">
               <img src={shop} alt="" />
             </span>
