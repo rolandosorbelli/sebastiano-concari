@@ -17,10 +17,6 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
   const openMenu = () => setOpen(true)
   const closeMenu = () => setOpen(false)
-  console.log(
-    window.location.pathname.includes("tattoos"),
-    "PATHNAME INCLUDES TATOOS"
-  )
 
   return (
     <nav>
@@ -31,6 +27,7 @@ const Navbar = () => {
           <h1 className="nav-name">Sebastiano Concari</h1>
         </div>
         <div className="links">
+          {console.log(window.location.pathname.includes("tattoos"), window)}
           <a
             href="/tattoos"
             className={
