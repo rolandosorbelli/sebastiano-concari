@@ -36,7 +36,7 @@ const Navbar = () => {
             className={
               window.location.pathname.includes("tattoos")
                 ? "links-active"
-                : undefined
+                : "links-inactive"
             }
           >
             Tattoos
@@ -46,7 +46,7 @@ const Navbar = () => {
             className={
               window.location.pathname.includes("/art")
                 ? "links-active"
-                : undefined
+                : "links-inactive"
             }
           >
             Art
@@ -56,7 +56,7 @@ const Navbar = () => {
             className={
               window.location.pathname.includes("/shop")
                 ? "links-active"
-                : undefined
+                : "links-inactive"
             }
           >
             Shop
@@ -77,7 +77,9 @@ const Navbar = () => {
           <a
             href="/"
             className={
-              window.location.pathname === "/" ? "links-active" : undefined
+              window.location.pathname === "/"
+                ? "links-active"
+                : "links-inactive"
             }
           >
             <span className="circle">
@@ -90,7 +92,7 @@ const Navbar = () => {
             className={
               window.location.pathname.includes("tattoos")
                 ? "links-active"
-                : undefined
+                : "links-inactive"
             }
           >
             <span className="circle">
@@ -103,7 +105,7 @@ const Navbar = () => {
             className={
               window.location.pathname.includes("/art")
                 ? "links-active"
-                : undefined
+                : "links-inactive"
             }
           >
             <span className="circle">
@@ -116,7 +118,7 @@ const Navbar = () => {
             className={
               window.location.pathname.includes("/shop")
                 ? "links-active"
-                : undefined
+                : "links-inactive"
             }
           >
             <span className="circle">
