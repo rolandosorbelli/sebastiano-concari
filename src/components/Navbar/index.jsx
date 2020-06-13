@@ -30,11 +30,9 @@ const Navbar = () => {
           {console.log(window.location.pathname.includes("tattoos"), window)}
           <a
             href="/tattoos"
-            className={
-              window.location.pathname.includes("tattoos")
-                ? console.log(window.location.pathname)
-                : console.log("NOPE")
-            }
+            className={classnames({
+              active: window.location.pathname.includes("tattoos"),
+            })}
           >
             Tattoos
           </a>
