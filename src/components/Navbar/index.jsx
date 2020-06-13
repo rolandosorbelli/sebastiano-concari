@@ -17,14 +17,20 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
   const openMenu = () => setOpen(true)
   const closeMenu = () => setOpen(false)
-  const [tattoosIndex, setTattoos] = useState(false)
-  console.log(tattoosIndex, "HERE!!!")
+  const [tattoosIndex, setTattooIndex] = useState(false)
+  const [artIndex, setArtIndex] = useState(false)
+  const [shopIndex, setShopIndex] = useState(false)
 
   useEffect(() => {
-    if (window.location.href.indexOf("tattoos") > 0) {
-      setTattoos(true)
-    }
-  }, [tattoosIndex])
+    const pageUrl = window.location.href
+    pageUrl.indexOf("tattoos") > 0
+      ? setTattooIndex(true)
+      : pageUrl.indexOf("art") > 0
+      ? setArtIndex(true)
+      : pageUrl.indexOf("shop") > 0
+      ? setShopIndex(true)
+      : setTattooIndex(false)
+  }, [])
 
   return (
     <nav>
@@ -35,7 +41,6 @@ const Navbar = () => {
           <h1 className="nav-name">Sebastiano Concari</h1>
         </div>
         <div className="links">
-          {console.log(window.location.href.indexOf("tattoos"))}
           <a
             href="/tattoos"
             className={classnames({
@@ -44,18 +49,13 @@ const Navbar = () => {
           >
             Tattoos
           </a>
-          <a
-            href="/art"
-            className={classnames({
-              "link-active": window.location.href.indexOf("art") > 0,
-            })}
-          >
+          <a href="/art" className={artIndex ? "link-active" : undefined}>
             Art
           </a>
           <a
             href="/shop"
             className={classnames({
-              "link-active": window.location.href.indexOf("shop") > 0,
+              "link-active": shopIndex,
             })}
           >
             Shop
