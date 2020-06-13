@@ -27,29 +27,27 @@ const Navbar = () => {
           <h1 className="nav-name">Sebastiano Concari</h1>
         </div>
         <div className="links">
-          {console.log(window.location, window)}
+          {console.log(window.location.pathname.includes("tattoos"), window)}
           <a
             href="/tattoos"
-            className={classnames({
-              active: window.location.pathname.includes("tattoos"),
-            })}
+            className={
+              window.location.href.indexOf("tattoos") > 0 ? "active" : undefined
+            }
           >
             Tattoos
           </a>
           <a
             href="/art"
-            className={classnames({
-              active: window.location.pathname.includes("art"),
-            })}
+            className={
+              window.location.href.indexOf("art") > 0 ? "active" : undefined
+            }
           >
             Art
           </a>
           <a
             href="/shop/"
             className={
-              window.location.pathname.includes("/shop")
-                ? "links-active"
-                : "links-inactive"
+              window.location.href.indexOf("shop") > 0 ? "active" : undefined
             }
           >
             Shop
