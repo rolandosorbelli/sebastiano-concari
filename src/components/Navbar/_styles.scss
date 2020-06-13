@@ -2,14 +2,15 @@ nav {
   display: grid;
   grid-template-rows: minmax(min-content, 100px) min-content;
   min-height: 10vh;
-  padding: 20px 0;
+
+  @include md {
+    padding: 20px 0;
+  }
 
   & .content {
     background-color: $text-light;
     display: grid;
     grid-template-columns: 5% repeat(2, auto) 5%;
-
-    column-gap: 10px;
     align-items: center;
     align-content: space-evenly;
 
@@ -94,6 +95,7 @@ nav {
       right: 0;
       bottom: 0;
       width: 75%;
+      z-index: 9999;
     }
 
     @include md {

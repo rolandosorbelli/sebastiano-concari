@@ -24,8 +24,6 @@ const Navbar = () => {
 
   useEffect(() => {
     const pageUrl = window.location.href
-    console.log(pageUrl.indexOf(""), "HOME!")
-
     pageUrl.indexOf("tattoos") > 0
       ? setTattooIndex(true)
       : pageUrl.indexOf("art") > 0
