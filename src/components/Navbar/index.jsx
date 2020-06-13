@@ -32,8 +32,8 @@ const Navbar = () => {
             href="/tattoos"
             className={
               window.location.pathname.includes("tattoos")
-                ? "links-active"
-                : "links-inactive"
+                ? console.log(window.location.pathname)
+                : console.log("NOPE")
             }
           >
             Tattoos
