@@ -17,7 +17,10 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
   const openMenu = () => setOpen(true)
   const closeMenu = () => setOpen(false)
-  console.log(window.location.pathname, "PATHNAME")
+  console.log(
+    window.location.pathname.includes("tattoos"),
+    "PATHNAME INCLUDES TATOOS"
+  )
 
   return (
     <nav>
