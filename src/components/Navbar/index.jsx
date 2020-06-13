@@ -30,25 +30,25 @@ const Navbar = () => {
           {console.log(window.location.href.indexOf("tattoos"))}
           <a
             href="/tattoos"
-            className={
-              window.location.href.indexOf("tattoos") > 0 ? "active" : undefined
-            }
+            className={classnames({
+              active: window.location.href.indexOf("tattoos") > 0,
+            })}
           >
             Tattoos
           </a>
           <a
             href="/art"
-            className={
-              window.location.href.indexOf("art") > 0 ? "active" : undefined
-            }
+            className={classnames({
+              active: window.location.href.indexOf("art") > 0,
+            })}
           >
             Art
           </a>
           <a
             href="/shop"
-            className={
-              window.location.href.indexOf("shop") > 0 ? "active" : undefined
-            }
+            className={classnames({
+              active: window.location.href.indexOf("shop") > 0,
+            })}
           >
             Shop
           </a>
