@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import classnames from "classnames"
 import { window } from "browser-monads"
 
@@ -17,6 +17,14 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
   const openMenu = () => setOpen(true)
   const closeMenu = () => setOpen(false)
+  const [tattoosIndex, setTattoos] = useState(false)
+  console.log(tattoosIndex, "HERE!!!")
+
+  useEffect(() => {
+    if (window.location.href.indexOf("tattoos") > 0) {
+      setTattoos(true)
+    }
+  }, [tattoosIndex])
 
   return (
     <nav>
@@ -31,7 +39,7 @@ const Navbar = () => {
           <a
             href="/tattoos"
             className={classnames({
-              "link-active": window.location.href.indexOf("tattoos") > 0,
+              "link-active": tattoosIndex,
             })}
           >
             Tattoos
