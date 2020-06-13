@@ -31,7 +31,7 @@ const Navbar = () => {
           <a
             href="/tattoos"
             className={classnames({
-              active: window.location.href.indexOf("tattoos") > 0,
+              "link-active": window.location.href.indexOf("tattoos") > 0,
             })}
           >
             Tattoos
@@ -39,7 +39,7 @@ const Navbar = () => {
           <a
             href="/art"
             className={classnames({
-              active: window.location.href.indexOf("art") > 0,
+              "link-active": window.location.href.indexOf("art") > 0,
             })}
           >
             Art
@@ -47,7 +47,7 @@ const Navbar = () => {
           <a
             href="/shop"
             className={classnames({
-              active: window.location.href.indexOf("shop") > 0,
+              "link-active": window.location.href.indexOf("shop") > 0,
             })}
           >
             Shop
