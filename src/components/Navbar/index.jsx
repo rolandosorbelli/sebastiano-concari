@@ -27,7 +27,7 @@ const Navbar = () => {
           <h1 className="nav-name">Sebastiano Concari</h1>
         </div>
         <div className="links">
-          {console.log(window.location.pathname.includes("tattoos"), window)}
+          {console.log(window.location.href.indexOf("tattoos"))}
           <a
             href="/tattoos"
             className={
@@ -45,7 +45,7 @@ const Navbar = () => {
             Art
           </a>
           <a
-            href="/shop/"
+            href="/shop"
             className={
               window.location.href.indexOf("shop") > 0 ? "active" : undefined
             }
