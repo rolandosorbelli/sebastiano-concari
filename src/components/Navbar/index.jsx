@@ -40,6 +40,9 @@ const Navbar = () => {
           <img className="logo" src={logo} alt="logo" />
           <img className="skull" src={skull} alt="second logo" />
           <h1 className="nav-name">Sebastiano Concari</h1>
+          <a href="/" aria-label="Home">
+            Home
+          </a>
         </div>
         <div className="links">
           <a
