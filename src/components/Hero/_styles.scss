@@ -118,6 +118,13 @@
       position: absolute;
       bottom: 0;
       padding-left: 5px;
+
+      // Fix for Safari in order to display arrow AFTER the text
+      @media not all and (min-resolution: 0.001dpcm) {
+        @supports (-webkit-appearance: none) {
+          right: -45px;
+        }
+      }
     }
   }
 }
