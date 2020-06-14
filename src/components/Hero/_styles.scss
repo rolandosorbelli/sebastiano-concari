@@ -79,6 +79,21 @@
       border: 2px solid $text-light;
       display: flex;
       justify-content: center;
+      transition: all ease-in-out 0.4s;
+
+      &:hover {
+        background-color: $text-light;
+        color: $secondary;
+        border: 2px solid $secondary;
+        -webkit-transition: all ease-in-out 0.4s;
+        -moz-transition: all ease-in-out 0.4s;
+        transition: all ease-in-out 0.4s;
+
+        & .hero__button-text {
+          color: $secondary;
+          transition: all ease-in-out 0.4s;
+        }
+      }
     }
 
     &-text {

@@ -52,9 +52,41 @@ nav {
         display: grid;
         grid-gap: 15px;
         grid-auto-flow: column;
-        grid-auto-columns: minmax(min-content, 100px);
+        grid-template-columns: repeat(3, minmax(min-content, 100px)) 200px;
         place-items: center;
         grid-column: 3/4;
+      }
+
+      & a {
+        transition: all ease-in-out 0.2s;
+
+        &:hover {
+          color: $secondary;
+          -webkit-transition: all ease-in-out 0.2s;
+          -moz-transition: all ease-in-out 0.2s;
+          transition: all ease-in-out 0.2s;
+        }
+      }
+
+      & .contact {
+        justify-self: end;
+        width: 120px;
+        height: 40px;
+        background-color: $text-light;
+        border: 2px solid $primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        transition: all ease-in-out 0.4s;
+
+        &:hover {
+          background-color: $secondary;
+          color: $text-light;
+          -webkit-transition: all ease-in-out 0.4s;
+          -moz-transition: all ease-in-out 0.4s;
+          transition: all ease-in-out 0.4s;
+        }
       }
     }
 
