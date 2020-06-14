@@ -122,7 +122,7 @@
       // Fix for Safari in order to display arrow AFTER the text
       @media not all and (min-resolution: 0.001dpcm) {
         @supports (-webkit-appearance: none) {
-          right: -45px;
+          right: -35px;
         }
       }
     }
