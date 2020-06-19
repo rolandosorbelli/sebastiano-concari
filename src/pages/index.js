@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
+import Instagram from "../components/Instagram"
 
 import tattoos from "../images/cta-tattoos.jpg"
 import art from "../images/cta-art.jpg"
@@ -29,6 +30,7 @@ const Home = () => (
       description="Browse my shop on Redbubble"
       url="/shop"
     />
+    <Instagram />
   </Layout>
 )
 

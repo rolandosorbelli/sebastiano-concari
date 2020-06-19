@@ -1,0 +1,52 @@
+.instagram {
+  display: block;
+  margin: 20px 5%;
+
+  &__title {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: $bold;
+    color: $primary;
+    margin-bottom: 10px;
+    border-bottom: 4px solid $secondary;
+
+    @include md {
+      font-size: 3rem;
+    }
+  }
+
+  &__more {
+    display: block;
+    font-size: 1rem;
+    font-weight: $regular;
+    color: $secondary;
+    line-height: 1.2rem;
+    margin-bottom: 20px;
+
+    @include md {
+      font-size: 1.2rem;
+    }
+
+    & span {
+      font-size: 1.5rem;
+      padding-left: 5px;
+
+      // Fix for Safari in order to display arrow AFTER the text
+      @media not all and (min-resolution: 0.001dpcm) {
+        @supports (-webkit-appearance: none) {
+          right: -35px;
+        }
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+    margin: 0 !important;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+}
