@@ -8,7 +8,7 @@ const Instagram = () => {
   }, [])
 
   const fetchData = async () => {
-    const url = `https://www.instagram.com/graphql/query/?query_hash=eddbde960fed6bde675388aac39a3657&variables={%22id%22:%2214930556527%22,%22first%22:3}`
+    const url = `https://www.instagram.com/graphql/query/?query_hash=eddbde960fed6bde675388aac39a3657&variables={%22id%22:%2214930556527%22,%22first%22:4}`
     const data = await fetch(url).then(res => res.json())
     console.log(data, "DATA")
 
@@ -26,20 +26,27 @@ const Instagram = () => {
     <div className="instagram">
       <div className="instagram__header">
         <h1 className="instagram__title">Instagram</h1>
-        <span className="instagram__more">
-          Get a glipse of my profile
-          <span>⟶</span>
-        </span>
+        <a href="https://www.instagram.com/essetattoo/">
+          <span className="instagram__more">
+            See more on my profile
+            <span>⟶</span>
+          </span>
+        </a>
       </div>
       <div className="instagram__content">
         {!loading &&
           instadata.map((item, index) => (
-            <img
-              key={index}
-              src={item.node.thumbnail_src}
-              alt=""
-              className="instagram__image"
-            />
+            <div className="overlay" key={index}>
+              <img
+                src={item.node.thumbnail_src}
+                alt=""
+                className="instagram__image"
+              />
+              <div className="background"></div>
+              <span className="instagram__caption">
+                {item.node.edge_media_to_caption.edges[0].node.text}
+              </span>
+            </div>
           ))}
       </div>
     </div>
