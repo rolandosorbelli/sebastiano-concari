@@ -4,28 +4,55 @@
 
   &__header {
     a {
-      &:hover {
+      display: inline-block;
+      &:hover > span:first-child {
         color: $secondary;
         text-decoration: underline;
+      }
+
+      & .arrow {
+        font-size: 1.5rem;
+        padding-left: 5px;
+        color: $secondary;
+
+        // Fix for Safari in order to display arrow AFTER the text
+        @media not all and (min-resolution: 0.001dpcm) {
+          @supports (-webkit-appearance: none) {
+            right: -35px;
+          }
+        }
       }
     }
   }
 
   &__title {
-    display: inline-block;
+    display: block;
     font-size: 2rem;
     font-weight: $bold;
     color: $primary;
     margin-bottom: 10px;
-    border-bottom: 4px solid $secondary;
+
+    &::after {
+      content: "";
+      border-bottom: 4px solid $secondary;
+      display: block;
+      width: 135px;
+    }
 
     @include md {
       font-size: 3rem;
+
+      &::after {
+        content: "";
+        border-bottom: 4px solid $secondary;
+        display: block;
+        width: 200px;
+      }
     }
   }
 
   &__more {
-    display: block;
+    display: inline-block;
     font-size: 1rem;
     font-weight: $regular;
     color: $secondary;
@@ -34,18 +61,6 @@
 
     @include md {
       font-size: 1.2rem;
-    }
-
-    & span {
-      font-size: 1.5rem;
-      padding-left: 5px;
-
-      // Fix for Safari in order to display arrow AFTER the text
-      @media not all and (min-resolution: 0.001dpcm) {
-        @supports (-webkit-appearance: none) {
-          right: -35px;
-        }
-      }
     }
   }
 

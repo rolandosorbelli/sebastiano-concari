@@ -27,10 +27,8 @@ const Instagram = () => {
       <div className="instagram__header">
         <h1 className="instagram__title">Instagram</h1>
         <a href="https://www.instagram.com/essetattoo/">
-          <span className="instagram__more">
-            See more on my profile
-            <span>⟶</span>
-          </span>
+          <span className="instagram__more">See more on my profile</span>
+          <span className="arrow">⟶</span>
         </a>
       </div>
       <div className="instagram__content">
