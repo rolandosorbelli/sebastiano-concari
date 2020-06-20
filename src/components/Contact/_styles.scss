@@ -1,0 +1,8 @@
+.contact {
+  width: 100%;
+  background-color: $primary;
+
+  @include md {
+    grid-column: 3/4;
+  }
+}

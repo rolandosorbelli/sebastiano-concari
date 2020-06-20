@@ -1,6 +1,10 @@
 .instagram {
   display: block;
-  margin: 20px 5%;
+  margin: 20px 5% 40px 5vw;
+
+  @include md {
+    grid-column: 2/3;
+  }
 
   &__header {
     a {
@@ -74,7 +78,7 @@
     }
 
     @include md {
-      grid-template-columns: repeat(4, 1fr);
+      // grid-template-columns: repeat(2, 1fr);
     }
   }
 
@@ -120,5 +124,13 @@
     overflow: hidden;
     position: absolute;
     margin: 0 40px;
+
+    @include md {
+      margin: 0 20px;
+    }
+
+    @include lg {
+      margin: 0 40px;
+    }
   }
 }
