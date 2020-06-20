@@ -65,7 +65,7 @@ nav {
         display: grid;
         grid-gap: 15px;
         grid-auto-flow: column;
-        grid-template-columns: repeat(3, minmax(min-content, 100px)) 200px;
+        grid-template-columns: repeat(3, minmax(min-content, 150px)) auto;
         place-items: center;
         grid-column: 3/4;
       }
@@ -81,7 +81,7 @@ nav {
         }
       }
 
-      & .contact {
+      & .contact-button {
         justify-self: end;
         width: 120px;
         height: 40px;

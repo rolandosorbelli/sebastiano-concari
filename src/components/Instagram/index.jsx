@@ -8,7 +8,7 @@ const Instagram = () => {
   }, [])
 
   const fetchData = async () => {
-    const url = `https://www.instagram.com/graphql/query/?query_hash=eddbde960fed6bde675388aac39a3657&variables={%22id%22:%2214930556527%22,%22first%22:4}`
+    const url = `https://www.instagram.com/graphql/query/?query_hash=eddbde960fed6bde675388aac39a3657&variables={%22id%22:%2214930556527%22,%22first%22:3}`
     const data = await fetch(url).then(res => res.json())
     console.log(data, "DATA")
 

@@ -57,7 +57,10 @@ const Navbar = () => {
           <a href="/shop" className={shopIndex ? "link-active" : undefined}>
             Shop
           </a>
-          <a href="mailto:rolando.sorbelli@gmail.com" className="contact">
+          <a
+            href="mailto:rolando.sorbelli@gmail.com"
+            className="contact-button"
+          >
             Contact me
           </a>
         </div>
