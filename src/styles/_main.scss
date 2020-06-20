@@ -27,13 +27,13 @@ a {
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 350px;
-  grid-row-gap: 1rem;
+  display: block;
 
   @include md {
+    display: grid;
+
     grid-template-columns: auto 2fr 1fr;
     grid-template-rows: none;
+    grid-row-gap: 1rem;
   }
 }

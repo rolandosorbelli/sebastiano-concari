@@ -12,7 +12,10 @@ const Contact = () => {
         <span className="arrow">⟶</span>
       </p>
       <div className="contact__bottom">
-        <a href="" className="contact__button">
+        <a
+          href="mailto:concarisebastiano@gmail.com"
+          className="contact__button"
+        >
           <span className="contact__button-text">click here!</span>
         </a>
         <img src={profile} alt="" className="contact__image" />

@@ -58,7 +58,7 @@ const Navbar = () => {
             Shop
           </a>
           <a
-            href="mailto:rolando.sorbelli@gmail.com"
+            href="mailto:concarisebastiano@gmail.com"
             className="contact-button"
           >
             Contact me
@@ -102,7 +102,7 @@ const Navbar = () => {
             </span>
             <span>Shop</span>
           </a>
-          <a href="/mailto:rolando.sorbelli@gmail.com">
+          <a href="mailto:concarisebastiano@gmail.com">
             <span className="circle">
               <img src={contact} alt="" />
             </span>
