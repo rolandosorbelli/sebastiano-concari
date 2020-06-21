@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
 import Instagram from "../components/Instagram"
 import Contact from "../components/Contact"
+import Footer from "../components/Footer"
 
 import tattoos from "../images/cta-tattoos.jpg"
 import art from "../images/cta-art.jpg"
@@ -35,6 +36,7 @@ const Home = () => (
       <Instagram />
       <Contact />
     </div>
+    <Footer />
   </Layout>
 )
 

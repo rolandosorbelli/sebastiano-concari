@@ -1,0 +1,70 @@
+footer {
+  width: 100%;
+  background-color: $secondary;
+  padding: 20px 5%;
+  color: $text-light;
+}
+
+.footer__section {
+  padding: 30px 0;
+  border-right: none;
+  border-bottom: 1px solid $text-light;
+  text-align: center;
+
+  @include sm {
+    display: block;
+    padding: 10px 20px;
+    border-right: 1px solid $text-light;
+    border-bottom: none;
+    text-align: left;
+  }
+
+  &:last-of-type {
+    border-right: none;
+    border-bottom: none;
+  }
+
+  & h2 {
+    font-size: 1.3rem;
+    font-weight: $bold;
+    margin-bottom: 15px;
+    text-decoration: underline;
+  }
+
+  & li {
+    font-weight: $light;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+}
+
+.footer-top {
+  display: grid;
+
+  grid-template-rows: repeat(3, min-content);
+
+  @include sm {
+    grid-template-rows: unset;
+    grid-template-columns: repeat(3, minmax(min-content, 500px));
+  }
+
+  .footer__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include sm {
+      justify-content: flex-start;
+    }
+    & .logo {
+      width: 50px;
+      height: auto;
+    }
+  }
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  padding: 20px 0;
+  border-top: 1px solid $text-light;
+}
