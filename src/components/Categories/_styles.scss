@@ -16,6 +16,11 @@
     scrollbar-width: none;
     width: 100%;
     text-align: center;
+
+    //Fixes scrollbar on Chrome
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   & a {
