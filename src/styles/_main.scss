@@ -32,6 +32,7 @@ a {
 
 .grid {
   display: block;
+  background-color: $text-light;
 
   @include md {
     display: grid;
