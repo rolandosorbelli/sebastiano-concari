@@ -13,6 +13,7 @@
 @import "../components/Instagram/_styles.scss";
 @import "../components/Contact/_styles.scss";
 @import "../components/Footer/_styles.scss";
+@import "../components/Header/_styles.scss";
 
 html {
   font-family: "Oswald", sans-serif;
@@ -20,6 +21,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $primary;
 }
 
 a {

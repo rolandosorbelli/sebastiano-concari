@@ -1,0 +1,30 @@
+.header {
+  margin: 40px 5% 0 5vw;
+  padding-bottom: 40px;
+  border-bottom: 1px solid $text-light;
+  &__title {
+    display: block;
+    font-size: 2rem;
+    font-weight: $bold;
+    color: $text-light;
+    margin-bottom: 10px;
+
+    &::after {
+      content: "";
+      border-bottom: 4px solid $secondary;
+      display: block;
+      width: 100px;
+    }
+
+    @include md {
+      font-size: 3rem;
+
+      &::after {
+        content: "";
+        border-bottom: 4px solid $secondary;
+        display: block;
+        width: 150px;
+      }
+    }
+  }
+}
