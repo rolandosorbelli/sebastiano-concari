@@ -1,18 +1,14 @@
 import React from "react"
-import { Link } from "gatsby"
-import Navbar from "../components/Navbar"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Navbar from "../components/Navbar"
+import Header from "../components/Header"
 
-const SecondPage = () => (
+const Art = () => (
   <Layout>
-    <SEO title="Page two" />
     <Navbar />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <Header title="Art" />
   </Layout>
 )
 
-export default SecondPage
+export default Art

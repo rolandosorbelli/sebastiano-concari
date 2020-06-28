@@ -3,7 +3,8 @@
   padding-bottom: 40px;
   border-bottom: 1px solid $text-light;
   &__title {
-    display: block;
+    display: inline;
+    position: relative;
     font-size: 2rem;
     font-weight: $bold;
     color: $text-light;
@@ -11,20 +12,16 @@
 
     &::after {
       content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
       border-bottom: 4px solid $secondary;
       display: block;
-      width: 100px;
+      width: 100%;
     }
 
     @include md {
       font-size: 3rem;
-
-      &::after {
-        content: "";
-        border-bottom: 4px solid $secondary;
-        display: block;
-        width: 150px;
-      }
     }
   }
 }
