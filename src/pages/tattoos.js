@@ -5,15 +5,18 @@ import Layout from "../components/layout"
 import Navbar from "../components/Navbar"
 import Header from "../components/Header"
 import Categories from "../components/Categories"
+import Gallery from "../components/Gallery"
 
 const Tattoos = ({ data }) => {
   const categories = data.allContentfulCategory.edges
+  const grid = data.allContentfulTattoo.edges
   return (
     <Layout>
       {console.log(data, "DATA")}
       <Navbar />
       <Header title="Tattoos" />
       <Categories content={categories} />
+      <Gallery content={grid} />
     </Layout>
   )
 }
@@ -41,7 +44,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulCategory(sort: { fields: createdAt, order: DESC }) {
+    allContentfulCategory(sort: { fields: title, order: ASC }) {
       edges {
         node {
           title
