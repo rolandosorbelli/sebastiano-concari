@@ -8,7 +8,7 @@ import Categories from "../components/Categories"
 import Gallery from "../components/Gallery"
 
 const Tattoos = ({ data }) => {
-  const categories = data.allContentfulCategory.edges
+  const categories = data.allContentfulTattooCategory.edges
   const grid = data.allContentfulTattoo.edges
   return (
     <Layout>
@@ -44,7 +44,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulCategory(sort: { fields: title, order: ASC }) {
+    allContentfulTattooCategory(sort: { fields: title, order: ASC }) {
       edges {
         node {
           title
