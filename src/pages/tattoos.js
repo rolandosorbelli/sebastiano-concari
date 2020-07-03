@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar"
 import Header from "../components/Header"
 import Categories from "../components/Categories"
 import Gallery from "../components/Gallery"
+import Footer from "../components/Footer"
 
 const Tattoos = ({ data }) => {
   const categories = data.allContentfulTattooCategory.edges
@@ -20,6 +21,7 @@ const Tattoos = ({ data }) => {
       <SimpleReactLightbox>
         <Gallery content={grid} />
       </SimpleReactLightbox>
+      <Footer />
     </Layout>
   )
 }
