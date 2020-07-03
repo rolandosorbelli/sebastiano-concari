@@ -59,22 +59,14 @@
 
   & .right {
     width: 30px;
-    background: linear-gradient(
-      90deg,
-      rgba(2, 0, 36, 0) 0%,
-      rgb(45, 45, 47) 100%
-    );
+    background: linear-gradient(to left, $primary, rgba($primary, 0));
     top: 0;
     right: 0;
   }
 
   & .left {
     width: 5%;
-    background: linear-gradient(
-      90deg,
-      rgb(45, 45, 47) 0%,
-      rgba(2, 0, 36, 0) 100%
-    );
+    background: linear-gradient(to right, $primary, rgba($primary, 0));
     top: 0;
     left: 0;
   }

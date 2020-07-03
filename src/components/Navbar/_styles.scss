@@ -72,6 +72,8 @@ nav {
       }
 
       & a {
+        font-size: 1.2rem;
+        font-weight: $thin;
         transition: all ease-in-out 0.2s;
 
         &:hover {
