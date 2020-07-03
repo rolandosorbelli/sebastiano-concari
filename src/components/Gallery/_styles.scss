@@ -16,6 +16,7 @@
     & div a {
       position: relative;
       grid-column: span 3;
+      overflow: hidden;
 
       &::before {
         content: "";
@@ -48,6 +49,18 @@
         object-fit: cover;
         object-position: center;
         overflow: hidden;
+      }
+
+      & img {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
+      }
+
+      &:hover img {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
       }
     }
   }
