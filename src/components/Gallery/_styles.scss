@@ -8,7 +8,12 @@
     grid-gap: 15px;
     grid-auto-flow: dense;
 
-    & a {
+    // Disable grid in a middle div
+    & div {
+      display: contents;
+    }
+
+    & div a {
       grid-column-start: span 3;
 
       @include md {

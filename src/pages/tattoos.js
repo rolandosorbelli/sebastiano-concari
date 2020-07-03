@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import SimpleReactLightbox from "simple-react-lightbox"
 
 import Layout from "../components/layout"
 import Navbar from "../components/Navbar"
@@ -16,7 +17,9 @@ const Tattoos = ({ data }) => {
       <Navbar />
       <Header title="Tattoos" />
       <Categories content={categories} />
-      <Gallery content={grid} />
+      <SimpleReactLightbox>
+        <Gallery content={grid} />
+      </SimpleReactLightbox>
     </Layout>
   )
 }
