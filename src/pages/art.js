@@ -5,12 +5,15 @@ import Navbar from "../components/Navbar"
 import Header from "../components/Header"
 import Categories from "../components/Categories"
 
-const Art = () => (
-  <Layout>
-    <Navbar />
-    <Header title="Art" />
-    <Categories content={categories} />
-  </Layout>
-)
+const Art = ({ data }) => {
+  const categories = data.allContentfulTattooCategory.edges
+  return (
+    <Layout>
+      <Navbar />
+      <Header title="Art" />
+      <Categories content={categories} />
+    </Layout>
+  )
+}
 
 export default Art
