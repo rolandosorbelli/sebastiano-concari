@@ -23,7 +23,10 @@ const Gallery = content => {
         <SRLWrapper options={options}>
           {content.content.map((item, i) => (
             <a key={i} href={item.node.image.fluid.src} data-attribute="SRL">
-              <img src={item.node.image.fluid.src} alt={item.node.alt} />
+              <img
+                src={item.node.image.fluid.src}
+                alt={item.node.description}
+              />
             </a>
           ))}
         </SRLWrapper>
