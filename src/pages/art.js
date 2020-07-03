@@ -9,7 +9,7 @@ const Art = () => (
   <Layout>
     <Navbar />
     <Header title="Art" />
-    <Categories />
+    <Categories content={categories} />
   </Layout>
 )
 
