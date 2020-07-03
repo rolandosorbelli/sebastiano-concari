@@ -14,6 +14,11 @@ const options = {
     showPrevButton: true,
     showThumbnailsButton: false,
   },
+  caption: {
+    captionAlignment: "end",
+    captionFontSize: "1.2rem",
+    captionFontWeight: "300",
+  },
 }
 
 const Gallery = content => {
