@@ -16,6 +16,13 @@
     & div a {
       grid-column-start: span 3;
 
+      &::before {
+        content: "";
+        padding-bottom: 100%;
+        display: inline-block;
+        vertical-align: top;
+      }
+
       @include md {
         grid-column-start: unset;
 
