@@ -5,7 +5,6 @@ import SimpleReactLightbox from "simple-react-lightbox"
 import Layout from "../components/layout"
 import Navbar from "../components/Navbar"
 import Header from "../components/Header"
-import Categories from "../components/Categories"
 import Gallery from "../components/Gallery"
 import Footer from "../components/Footer"
 
@@ -17,9 +16,8 @@ const Tattoos = ({ data }) => {
       {console.log(data, "DATA")}
       <Navbar />
       <Header title="Tattoos" />
-      <Categories content={categories} />
       <SimpleReactLightbox>
-        <Gallery content={grid} />
+        <Gallery content={grid} categories={categories} />
       </SimpleReactLightbox>
       <Footer />
     </Layout>

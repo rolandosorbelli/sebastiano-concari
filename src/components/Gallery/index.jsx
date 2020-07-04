@@ -21,22 +21,44 @@ const options = {
   },
 }
 
-const Gallery = content => {
+const Gallery = ({ categories, content }) => {
+  console.log(content, "CONTENT")
+  console.log(categories, "CATEGORIES")
+
   return (
-    <div className="gallery">
-      <div className="gallery__wrapper">
-        <SRLWrapper options={options}>
-          {content.content.map((item, i) => (
-            <a key={i} href={item.node.image.fluid.src} data-attribute="SRL">
-              <img
-                src={item.node.image.fluid.src}
-                alt={item.node.description}
-              />
-            </a>
-          ))}
-        </SRLWrapper>
+    <>
+      <div className="categories">
+        <div className="categories__wrapper">
+          <div className="categories__gradient left"></div>
+          {categories.length > 0 && (
+            <div className="categories__items">
+              <a href="/">All</a>
+              {categories.map((item, i) => (
+                <a href="/" key={i}>
+                  {item.node.title}
+                </a>
+              ))}
+            </div>
+          )}
+
+          <div className="categories__gradient right"></div>
+        </div>
       </div>
-    </div>
+      <div className="gallery">
+        <div className="gallery__wrapper">
+          <SRLWrapper options={options}>
+            {content.map((item, i) => (
+              <a key={i} href={item.node.image.fluid.src} data-attribute="SRL">
+                <img
+                  src={item.node.image.fluid.src}
+                  alt={item.node.description}
+                />
+              </a>
+            ))}
+          </SRLWrapper>
+        </div>
+      </div>
+    </>
   )
 }
 
