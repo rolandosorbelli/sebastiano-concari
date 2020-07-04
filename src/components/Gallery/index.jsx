@@ -22,8 +22,71 @@ const options = {
 }
 
 const Gallery = ({ categories, content }) => {
-  console.log(content, "CONTENT")
-  console.log(categories, "CATEGORIES")
+  const [inputQuery, setInputQuery] = React.useState("")
+  const [urlQuery, setUrlQuery] = React.useState("")
+  const [contentState, setContentState] = React.useState([])
+
+  React.useEffect(() => {
+    const query = {}
+    const parts = window.location.href.replace(
+      /[?]+([^=]+)=([^]*)/gi,
+      (m, key, value) => {
+        query[key] = value
+      }
+    )
+    if (Object.keys(query).length > 0) setUrlQuery(query.category)
+  }, [])
+
+  const handleQueries = e => {
+    e.preventDefault()
+    const query = e.target.text
+    console.log(query, "QUERY")
+    if (query.length > 0) setInputQuery(query)
+  }
+
+  const resetQueries = e => {
+    e.preventDefault()
+    if (window.history.pushState) {
+      const { protocol, host, pathname } = window.location
+      console.log(protocol, host, pathname, "URL")
+      const newurl = `${protocol}//${host}${pathname}`
+      window.history.pushState({ path: newurl }, "", newurl)
+    }
+    setContentState(content)
+  }
+
+  React.useEffect(() => {
+    if (Object.keys(inputQuery).length > 0) handleNewUrl()
+  }, [inputQuery])
+
+  const handleNewUrl = () => {
+    const formattedQuery = inputQuery.replace(/\s+/g, "-").toLowerCase()
+    const newQuery = `category=${formattedQuery}`
+
+    if (window.history.pushState) {
+      const { protocol, host, pathname } = window.location
+      const newurl = `${protocol}//${host}${pathname}?${newQuery}`
+      window.history.pushState({ path: newurl }, "", newurl)
+    }
+    setUrlQuery(formattedQuery)
+  }
+
+  React.useEffect(() => {
+    if (content.length > 0) setContentState(content)
+  }, [content])
+
+  const filterPictures = () => {
+    const filterArray = []
+    content.forEach(item => {
+      const match = item.node.category.filter(item => item.slug === urlQuery)
+      if (match.length) filterArray.push(item)
+      if (Object.keys(urlQuery).length > 0) setContentState(filterArray)
+    })
+  }
+
+  React.useEffect(() => {
+    if (Object.keys(urlQuery).length > 0) filterPictures()
+  }, [urlQuery])
 
   return (
     <>
@@ -32,22 +95,24 @@ const Gallery = ({ categories, content }) => {
           <div className="categories__gradient left"></div>
           {categories.length > 0 && (
             <div className="categories__items">
-              <a href="/">All</a>
+              <a href="/" onClick={e => resetQueries(e)}>
+                All
+              </a>
               {categories.map((item, i) => (
-                <a href="/" key={i}>
+                <a href="/" key={i} onClick={e => handleQueries(e)}>
                   {item.node.title}
                 </a>
               ))}
             </div>
           )}
-
           <div className="categories__gradient right"></div>
         </div>
       </div>
+
       <div className="gallery">
         <div className="gallery__wrapper">
           <SRLWrapper options={options}>
-            {content.map((item, i) => (
+            {contentState.map((item, i) => (
               <a key={i} href={item.node.image.fluid.src} data-attribute="SRL">
                 <img
                   src={item.node.image.fluid.src}
