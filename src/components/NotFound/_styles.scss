@@ -1,0 +1,32 @@
+.notFound {
+  background-color: $text-light;
+  height: calc(100vh - 634.7px);
+  padding: 40px 5%;
+
+  @include sm {
+    height: calc(100vh - 360.8px);
+  }
+
+  @include md {
+    height: calc(100vh - 410.8px);
+  }
+
+  &__header {
+    font-size: 3rem;
+    font-weight: $bold;
+    margin-bottom: 30px;
+
+    @include md {
+      font-size: 5rem;
+    }
+  }
+
+  &__content {
+    font-size: 1.2rem;
+    font-weight: $light;
+
+    @include md {
+      font-size: 2rem;
+    }
+  }
+}

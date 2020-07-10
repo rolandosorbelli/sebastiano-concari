@@ -110,7 +110,7 @@ const Navbar = () => {
             </span>
             <span>Contact me</span>
           </a>
-          <a href="/">
+          <a href="https://www.instagram.com/essetattoo/">
             <span className="circle">
               <img src={instagram} alt="" />
             </span>
