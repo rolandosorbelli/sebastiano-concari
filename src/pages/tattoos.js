@@ -29,7 +29,6 @@ export const query = graphql`
     allContentfulTattoo(sort: { fields: createdAt, order: DESC }) {
       edges {
         node {
-          alt
           category {
             slug
             title
