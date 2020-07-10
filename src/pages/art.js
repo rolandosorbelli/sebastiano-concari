@@ -17,7 +17,7 @@ const Art = ({ data }) => {
       <Navbar />
       <Header title="Art" />
       <SimpleReactLightbox>
-        <Gallery content={grid} categories={categories} />
+        <Gallery content={grid} categories={categories} isShop={false} />
       </SimpleReactLightbox>
       <Footer />
     </Layout>

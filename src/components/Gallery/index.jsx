@@ -21,7 +21,7 @@ const options = {
   },
 }
 
-const Gallery = ({ categories, content }) => {
+const Gallery = ({ categories, content, isShop }) => {
   const [inputQuery, setInputQuery] = React.useState("")
   const [urlQuery, setUrlQuery] = React.useState("")
   const [contentState, setContentState] = React.useState([])
@@ -121,6 +121,14 @@ const Gallery = ({ categories, content }) => {
                   data-attribute="SRL"
                 >
                   <img src={item.node.image.fluid.src} alt={withDescription} />
+                  {isShop && (
+                    <div className="gallery__info">
+                      <p className="gallery__info--header">{item.node.title}</p>
+                      <p className="gallery__info--body">
+                        {item.node.description}
+                      </p>
+                    </div>
+                  )}
                 </a>
               )
             })}

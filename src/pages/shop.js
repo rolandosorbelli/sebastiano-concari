@@ -8,16 +8,16 @@ import Header from "../components/Header"
 import Gallery from "../components/Gallery"
 import Footer from "../components/Footer"
 
-const Tattoos = ({ data }) => {
-  const categories = data.allContentfulTattooCategory.edges
-  const grid = data.allContentfulTattoo.edges
+const Shop = ({ data }) => {
+  const categories = data.allContentfulShopCategory.edges
+  const grid = data.allContentfulShop.edges
   return (
     <Layout>
       {console.log(data, "DATA")}
       <Navbar />
-      <Header title="Tattoos" />
+      <Header title="Shop" />
       <SimpleReactLightbox>
-        <Gallery content={grid} categories={categories} isShop={false} />
+        <Gallery content={grid} categories={categories} isShop={true} />
       </SimpleReactLightbox>
       <Footer />
     </Layout>
@@ -26,10 +26,9 @@ const Tattoos = ({ data }) => {
 
 export const query = graphql`
   {
-    allContentfulTattoo(sort: { fields: createdAt, order: DESC }) {
+    allContentfulShop(sort: { fields: createdAt, order: DESC }) {
       edges {
         node {
-          alt
           category {
             slug
             title
@@ -44,10 +43,11 @@ export const query = graphql`
           }
           slug
           title
+          url
         }
       }
     }
-    allContentfulTattooCategory(sort: { fields: title, order: ASC }) {
+    allContentfulShopCategory(sort: { fields: title, order: ASC }) {
       edges {
         node {
           title
@@ -58,4 +58,4 @@ export const query = graphql`
   }
 `
 
-export default Tattoos
+export default Shop
