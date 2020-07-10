@@ -40,7 +40,6 @@ const Gallery = ({ categories, content }) => {
   const handleQueries = e => {
     e.preventDefault()
     const query = e.target.text
-    console.log(query, "QUERY")
     if (query.length > 0) setInputQuery(query)
   }
 
@@ -108,18 +107,23 @@ const Gallery = ({ categories, content }) => {
           <div className="categories__gradient right"></div>
         </div>
       </div>
-
       <div className="gallery">
         <div className="gallery__wrapper">
           <SRLWrapper options={options}>
-            {contentState.map((item, i) => (
-              <a key={i} href={item.node.image.fluid.src} data-attribute="SRL">
-                <img
-                  src={item.node.image.fluid.src}
-                  alt={item.node.description}
-                />
-              </a>
-            ))}
+            {contentState.map((item, i) => {
+              const withDescription = item.node.description
+                ? `${item.node.title} - ${item.node.description}`
+                : item.node.title
+              return (
+                <a
+                  key={i}
+                  href={item.node.image.fluid.src}
+                  data-attribute="SRL"
+                >
+                  <img src={item.node.image.fluid.src} alt={withDescription} />
+                </a>
+              )
+            })}
           </SRLWrapper>
         </div>
       </div>
