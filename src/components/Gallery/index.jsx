@@ -109,30 +109,53 @@ const Gallery = ({ categories, content, isShop }) => {
       </div>
       <div className="gallery">
         <div className="gallery__wrapper">
-          <SRLWrapper options={options}>
-            {contentState.map((item, i) => {
-              const withDescription = item.node.description
-                ? `${item.node.title} - ${item.node.description}`
-                : item.node.title
-              return (
-                <a
-                  key={i}
-                  href={item.node.image.fluid.src}
-                  data-attribute="SRL"
-                >
-                  <img src={item.node.image.fluid.src} alt={withDescription} />
-                  {isShop && (
-                    <div className="gallery__info">
-                      <p className="gallery__info--header">{item.node.title}</p>
-                      <p className="gallery__info--body">
-                        {item.node.description}
-                      </p>
-                    </div>
-                  )}
-                </a>
-              )
-            })}
-          </SRLWrapper>
+          {isShop === false ? (
+            <SRLWrapper options={options}>
+              {contentState.map((item, i) => {
+                const withDescription = item.node.description
+                  ? `${item.node.title} - ${item.node.description}`
+                  : item.node.title
+                return (
+                  <a
+                    key={i}
+                    href={item.node.image.fluid.src}
+                    data-attribute="SRL"
+                  >
+                    <img
+                      src={item.node.image.fluid.src}
+                      alt={withDescription}
+                    />
+                  </a>
+                )
+              })}
+            </SRLWrapper>
+          ) : (
+            <div>
+              {contentState.map((item, i) => {
+                const withDescription = item.node.description
+                  ? `${item.node.title} - ${item.node.description}`
+                  : item.node.title
+                return (
+                  <a key={i} href={item.node.url}>
+                    <img
+                      src={item.node.image.fluid.src}
+                      alt={withDescription}
+                    />
+                    {isShop && (
+                      <div className="gallery__info">
+                        <p className="gallery__info--header">
+                          {item.node.title}
+                        </p>
+                        <p className="gallery__info--body">
+                          {item.node.description}
+                        </p>
+                      </div>
+                    )}
+                  </a>
+                )
+              })}
+            </div>
+          )}
         </div>
       </div>
     </>
