@@ -6,13 +6,14 @@ import Navbar from "../components/Navbar"
 import Header from "../components/Header"
 import Gallery from "../components/Gallery"
 import Footer from "../components/Footer"
+import SEO from "../components/seo"
 
 const Shop = ({ data }) => {
   const categories = data.allContentfulShopCategory.edges
   const grid = data.allContentfulShop.edges
   return (
     <Layout>
-      {console.log(data, "DATA")}
+      <SEO title="Shop" />
       <Navbar />
       <Header title="Shop" />
       <Gallery content={grid} categories={categories} isShop={true} />

@@ -6,6 +6,7 @@ import Hero from "../components/Hero"
 import Instagram from "../components/Instagram"
 import Contact from "../components/Contact"
 import Footer from "../components/Footer"
+import SEO from "../components/seo"
 
 import tattoos from "../images/cta-tattoos.jpg"
 import art from "../images/cta-art.jpg"
@@ -13,6 +14,7 @@ import shop from "../images/cta-shop.jpg"
 
 const Home = () => (
   <Layout>
+    <SEO title="Home" />
     <Navbar />
     <Hero
       image={tattoos}

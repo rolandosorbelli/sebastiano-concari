@@ -7,13 +7,14 @@ import Navbar from "../components/Navbar"
 import Header from "../components/Header"
 import Gallery from "../components/Gallery"
 import Footer from "../components/Footer"
+import SEO from "../components/seo"
 
 const Tattoos = ({ data }) => {
   const categories = data.allContentfulTattooCategory.edges
   const grid = data.allContentfulTattoo.edges
   return (
     <Layout>
-      {console.log(data, "DATA")}
+      <SEO title="Tattoos" />
       <Navbar />
       <Header title="Tattoos" />
       <SimpleReactLightbox>

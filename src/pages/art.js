@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar"
 import Header from "../components/Header"
 import Gallery from "../components/Gallery"
 import Footer from "../components/Footer"
+import SEO from "../components/seo"
 
 const Art = ({ data }) => {
   const categories = data.allContentfulArtCategory.edges
@@ -14,6 +15,7 @@ const Art = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="Art" />
       <Navbar />
       <Header title="Art" />
       <SimpleReactLightbox>
