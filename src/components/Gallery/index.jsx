@@ -77,9 +77,11 @@ const Gallery = ({ categories, content, isShop }) => {
   const filterPictures = () => {
     const filterArray = []
     content.forEach(item => {
-      const match = item.node.category.filter(item => item.slug === urlQuery)
-      if (match.length) filterArray.push(item)
-      if (Object.keys(urlQuery).length > 0) setContentState(filterArray)
+      if (item.node.category) {
+        const match = item.node.category.filter(item => item.slug === urlQuery)
+        if (match.length) filterArray.push(item)
+        if (Object.keys(urlQuery).length > 0) setContentState(filterArray)
+      }
     })
   }
 
@@ -112,10 +114,9 @@ const Gallery = ({ categories, content, isShop }) => {
           {isShop === false ? (
             <SRLWrapper options={options}>
               {contentState.map((item, i) => {
-                const withDescription =
-                  item.node.description && item.node.description.length > 1
-                    ? `${item.node.title} - ${item.node.description}`
-                    : item.node.title
+                const withDescription = item.node.description
+                  ? `${item.node.title} - ${item.node.description}`
+                  : item.node.title
                 return (
                   <a
                     key={i}
