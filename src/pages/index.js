@@ -32,7 +32,7 @@ const Home = () => (
     <Hero
       image={makeup}
       heading="My makeup"
-      description="Because the is no better canvas than a face"
+      description="Because there is no better canvas than a face"
       url="/makeup"
     />
     <Hero
