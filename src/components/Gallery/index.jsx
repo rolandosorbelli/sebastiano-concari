@@ -114,9 +114,12 @@ const Gallery = ({ categories, content, isShop }) => {
           {isShop === false ? (
             <SRLWrapper options={options}>
               {contentState.map((item, i) => {
-                const withDescription = item.node.description
-                  ? `${item.node.title} - ${item.node.description}`
-                  : item.node.title
+                const withDescription =
+                  item.node.description === null
+                    ? item.node.title
+                    : item.node.description.length > 1
+                    ? `${item.node.title} - ${item.node.description}`
+                    : item.node.title
                 return (
                   <a
                     key={i}
