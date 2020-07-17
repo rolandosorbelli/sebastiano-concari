@@ -10,6 +10,7 @@ import contact from "../../images/contact.svg"
 import instagram from "../../images/instagram.svg"
 import shop from "../../images/shop.svg"
 import tattoos from "../../images/tattoos.svg"
+import makeup from "../../images/makeup.svg"
 
 import { Menu, Close } from "@material-ui/icons"
 
@@ -21,6 +22,7 @@ const Navbar = () => {
   const [artIndex, setArtIndex] = useState(false)
   const [shopIndex, setShopIndex] = useState(false)
   const [homeIndex, setHomeIndex] = useState(false)
+  const [makeupIndex, setMakeupIndex] = useState(false)
 
   useEffect(() => {
     const pageUrl = window.location.href
@@ -28,6 +30,8 @@ const Navbar = () => {
       ? setTattooIndex(true)
       : pageUrl.indexOf("art") > 0
       ? setArtIndex(true)
+      : pageUrl.indexOf("makeup") > 0
+      ? setMakeupIndex(true)
       : pageUrl.indexOf("shop") > 0
       ? setShopIndex(true)
       : setHomeIndex(true)
@@ -55,6 +59,9 @@ const Navbar = () => {
           </a>
           <a href="/art" className={artIndex ? "link-active" : undefined}>
             Art
+          </a>
+          <a href="/makeup" className={makeupIndex ? "link-active" : undefined}>
+            Makeup
           </a>
           <a href="/shop" className={shopIndex ? "link-active" : undefined}>
             Shop
@@ -97,6 +104,12 @@ const Navbar = () => {
               <img src={art} alt="" />
             </span>
             <span>Art</span>
+          </a>
+          <a href="/makeup" className={makeupIndex ? "link-active" : undefined}>
+            <span className="circle">
+              <img src={makeup} alt="" />
+            </span>
+            <span>Makeup</span>
           </a>
           <a href="/shop" className={shopIndex ? "link-active" : undefined}>
             <span className="circle">
