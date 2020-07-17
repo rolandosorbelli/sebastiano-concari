@@ -99,9 +99,13 @@
     &-text {
       display: block;
       color: $secondary;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       text-transform: uppercase;
       align-self: center;
+
+      @include lg {
+        font-size: 1.5rem;
+      }
     }
   }
 }
