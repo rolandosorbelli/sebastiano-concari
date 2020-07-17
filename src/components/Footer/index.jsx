@@ -10,6 +10,10 @@ const Footer = () => {
           <a href="/">
             <img className="logo" src={logo} alt="logo" />
           </a>
+          <p className="footer__logo-details">Based in London</p>
+          <p className="footer__logo-details">
+            Ascendence Tattoo - 141 N Hyde Rd, Hayes, UB3 4NS
+          </p>
         </div>
         <div className="footer__section footer__about">
           <h2>About me</h2>

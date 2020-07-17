@@ -50,7 +50,7 @@ footer {
 
   .footer__logo {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
 
     @include sm {
@@ -59,6 +59,10 @@ footer {
     & .logo {
       width: 50px;
       height: auto;
+    }
+
+    &-details {
+      margin-top: 10px;
     }
   }
 }
