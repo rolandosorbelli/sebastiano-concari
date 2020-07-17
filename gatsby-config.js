@@ -9,6 +9,12 @@ module.exports = {
     author: `Rolando Sorbelli`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-172936043-1",
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-contentful`,
