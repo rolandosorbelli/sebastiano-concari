@@ -21,6 +21,9 @@ const Footer = () => {
               <a href="/art">Art</a>
             </li>
             <li>
+              <a href="/makeup">Makeup</a>
+            </li>
+            <li>
               <a href="/shop">Shop</a>
             </li>
           </ul>
