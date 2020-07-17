@@ -11,6 +11,7 @@ import SEO from "../components/seo"
 import tattoos from "../images/cta-tattoos.jpg"
 import art from "../images/cta-art.jpg"
 import shop from "../images/cta-shop.jpg"
+import makeup from "../images/cta-makeup.jpg"
 
 const Home = () => (
   <Layout>
@@ -27,6 +28,12 @@ const Home = () => (
       heading="My art"
       description="Not only interested in tattoos? Have a look at the art I make here!"
       url="/art"
+    />
+    <Hero
+      image={makeup}
+      heading="My makeup"
+      description="Because the is no better canvas than a face"
+      url="/makeup"
     />
     <Hero
       image={shop}
