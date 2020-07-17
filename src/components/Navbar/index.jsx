@@ -73,7 +73,7 @@ const Navbar = () => {
             Contact me
           </a>
         </div>
-        <Menu className="menu" onClick={openMenu} />
+        <Menu className="menu" onClick={openMenu} width="100%" height="100%" />
       </div>
       <div
         className={classnames("dropdown", {
